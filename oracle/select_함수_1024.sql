@@ -28,7 +28,7 @@ from employees;
 --- salary 의 합계와 평균을 구하고 AVG를 사용하지 말고 평균 출력 
 --- 그룹 함수 
 
-SELECT salary,
+SELECT
     round(SUM (salary),1) AS 합계,
     round(AVG (salary),1) AS 평균,
     round(SUM (salary)/ COUNT(salary),1) As 계산된_평균
