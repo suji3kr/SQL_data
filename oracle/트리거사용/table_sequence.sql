@@ -24,7 +24,7 @@ START WITH 1
 INCREMENT BY 1;
 
 CREATE SEQUENCE order_id_seq START WITH 1 INCREMENT BY 1;
-CREATE SEQUENCE product_id_seq START WITH 1 INCREMENT BY 1;
+CREATE SEQUENCE product_id_seq START WITH 1 INCREMENT BY 1;  -- 시퀀스 1씩증가
 
 -- 샘플 상품 데이터 생성
 BEGIN
@@ -46,8 +46,15 @@ AFTER INSERT ON orders
 FOR EACH ROW
 BEGIN
     UPDATE products
-    SET stock_quantity = stock_quantity - 1
+    SET stock_quantity = stock_quantity - 5
     WHERE product_id = :NEW.product_id;
+END;
+
+
+-- 주문 트리거 테스트 위한 샘플 주문 생성(order_id를 증가시키면서 테스트)
+BEGIN
+    INSERT INTO orders (order_id, member_id, product_id, order_quantity, order_date)
+    VALUES (10, 3, 3, 10, TIMESTAMP '2024-02-10 10:03:00');
 END;
 
 /*
@@ -74,14 +81,10 @@ END;
 -- 주문 수량 수정 트리거 테스트, 주문 수량을 기존 수량보다 적게/많이 해서 테스트
 BEGIN    
     UPDATE orders
-    SET order_quantity = 14
-    WHERE order_id = 16;
+    SET order_quantity = 10
+    WHERE order_id = 10;
 END;
--- 주문 트리거 테스트 위한 샘플 주문 생성(order_id를 증가시키면서 테스트)
-BEGIN
-    INSERT INTO orders (order_id, member_id, product_id, order_quantity, order_date)
-    VALUES (16, 1, 1, 1, TIMESTAMP '2024-02-23 10:03:00');
-END;
+
 
 
 /*
@@ -101,7 +104,7 @@ END;
 -- 주문 취소 트리거 테스트, 삭제한 주문의 상품 수량이 삭제된 주문 수량만큼 증가된다.
 BEGIN
     DELETE FROM orders
-    WHERE order_id = 3;
+    WHERE order_id = 5;
 END;
 
 -- 상품 조회
