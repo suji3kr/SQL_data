@@ -1,7 +1,13 @@
-![화면 캡처 2024-11-20 173454](https://github.com/user-attachments/assets/61556f7c-452d-41e4-ab73-0bf26e9a4843)
 
 <br/><br/><br/>
- #### _____________________프로시저  학습 시작
+ #### _____________________프로시저  학습 
+
+<br/><br/>
+ 
+![화면 캡처 2024-11-20 173454](https://github.com/user-attachments/assets/61556f7c-452d-41e4-ab73-0bf26e9a4843)
+
+<br/><br/>
+
       USE market_db;
       
       
