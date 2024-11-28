@@ -24,11 +24,13 @@
       
       call ifproc1();
 
-<br/><br/>
+<br/>
 
 * ### SQL 편집에서 만들기 <br/><br/>
 >*  delimiter$$<br/>
 >*  delimiter ;
+
+<br/>
 
 * ### 스토어 프로시저 마우스 오른쪽 create 만들고  X로 끄면서 저장 apply 
 > ####  개발 환경 툴이 지원되어야 함.
@@ -91,8 +93,7 @@
 <br/><br/>
 
 
-<br/><br/>
-
+<br/>
 
 
 >* ![화면 캡처 2024-11-04 144041](https://github.com/user-attachments/assets/4de6ca10-b686-4996-b519-7b6ce3d018e3)
