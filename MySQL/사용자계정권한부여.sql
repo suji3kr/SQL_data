@@ -1,6 +1,6 @@
 -- 데이터베이스 확인 및 생성
 show databases;
-create database webdb;
+CREATE DATABASE estore;   
 
 -- 사용자 확인
 use mysql;
@@ -16,5 +16,5 @@ flush privileges;
 
 -- 밑에만 실행 가능 -- 
 
-grant all privileges on market_db.* to 'dbuser'@'%';
+grant all privileges on estore.* to 'dbuser'@'%';
 flush privileges;
