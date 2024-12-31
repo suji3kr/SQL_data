@@ -29,3 +29,23 @@ create table comment_table(
     commentCreatedTime datetime default now(),
     constraint fk_comment_table foreign key (boardId) references board_table(id) on delete cascade
 );
+
+select * from board_table;
+
+delete from board_table where id = 16;
+
+
+SELECT * FROM board_table;
+
+-- 현페이지 3개식 출력
+select * from board_table order by id desc limit 0, 3; -- 12, 11, 10
+select * from board_table order by id desc limit 1, 3; -- 11, 10, 9
+select * from board_table order by id desc limit 2, 3; -- 10, 9, 8
+select * from board_table order by id desc limit 3, 3; -- 9, 8, 7
+
+select * from board_table order by id desc limit 0, 5; -- 12, 11, 10, 9, 8
+
+-- 1page: 12,11,10,  2page: 9, 8, 7,  3page: 6, 5, 4 
+select * from board_table order by id desc limit 0, 3; -- 12, 11, 10
+select * from board_table order by id desc limit 3, 3; -- 9, 8, 7
+select * from board_table order by id desc limit 6, 3; -- 6, 5, 4
