@@ -10,3 +10,5 @@ create table member_table(
     memberAge int,
     memberMobile varchar(30)
 );
+
+SELECT *FROM member_table;
